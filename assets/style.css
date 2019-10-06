@@ -1,0 +1,36 @@
+.container {
+    padding-top: 40px; 
+}
+
+#startStyle {
+    background: #999999;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 10px;
+    opacity: .8;
+    border: none;
+    border-radius: 4px;
+    display: table; 
+    margin: 0 auto;
+}
+
+
+#scoreStyleEl {
+    padding: 10px 20px;
+    text-align: center;
+    background: none;
+    border: none;
+    display: table; 
+    margin: 0 auto;
+}
+
+#questionContainer {
+    float: left;
+    background: #999999;
+    width: 100%;
+    padding: 20px;
+}
+
+#timeHolder {
+    text-align: center;
+}
