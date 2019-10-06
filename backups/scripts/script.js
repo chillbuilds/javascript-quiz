@@ -9,9 +9,8 @@ $("#timeHolder").text("Timer: " + 0);
 
 function quizStart() {
   totalSeconds = questions.length * 15;
-  $("#startStyle").attr("style",'display : none;')
-  $("#quiz").attr("style",'display : contents;')
   setTime();
+  document.querySelector("#startBtn").id = "questionContainer";
   nextQuestion();
 }
 
@@ -28,24 +27,20 @@ function setTime() {
 
 function nextQuestion() {
   var newQuestion = questions[questionNum].title;
+  questionContainer.innerHTML = "<h1>" + newQuestion + "</h1>";
   renderAnswers();
   questionNum++;
 }
 
 function renderAnswers() {
 
-//   for (i = 0; i < questions[questionNum].choices.length; i++) {
-//     var answerBtn = $("<button>");
-//     answerBtn.addClass("answerBtn");
-//     answerBtn.attr("answer", questions[questionNum].choices[i]);
-//     answerBtn.text(questions[questionNum].choices[i]);
-//     $("#questionContainer").append(answerBtn);
-//   }
-var x = questions[questionNum].title;
-$("#question").text(x);
-$("#choice1").text(questions[questionNum].choices[0]);
-$("#choice2").text(questions[questionNum].choices[1]);
-$("#choice3").text(questions[questionNum].choices[2]);
+  for (i = 0; i < questions[questionNum].choices.length; i++) {
+    var answerBtn = $("<button>");
+    answerBtn.addClass("answerBtn");
+    answerBtn.attr("answer", questions[questionNum].choices[i]);
+    answerBtn.text(questions[questionNum].choices[i]);
+    $("#questionContainer").append(answerBtn);
+  }
 }
 
 function answerCheck() {
@@ -76,6 +71,6 @@ $("#startStyle").on("click", quizStart);
 
 $("#scoreStyle").on("click", highscores);
 
-$("#choices").on("click", function() {
+$(".answerBtn").on("click", function() {
   alert("dope");
 });
