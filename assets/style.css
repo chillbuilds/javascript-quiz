@@ -4,6 +4,7 @@
 
 #startStyle {
     background: #999999;
+    font-size: 26;
     text-align: center;
     padding: 10px 20px;
     margin-top: 10px;
@@ -14,8 +15,11 @@
     margin: 0 auto;
 }
 
+h1{
+    margin-bottom: 40px;
+}
 
-#scoreStyleEl {
+#scoreStyle {
     padding: 10px 20px;
     text-align: center;
     background: none;
@@ -25,12 +29,30 @@
 }
 
 #questionContainer {
-    float: left;
     background: #999999;
     width: 100%;
     padding: 20px;
+    /* transition: .5s; */
 }
 
 #timeHolder {
     text-align: center;
+}
+
+.answerBtns {
+    background: #999999;
+    font-size: 26px;
+    display: table; 
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-left: none;
+    border-top: none;
+}
+
+button:hover {
+    outline:0;
+    opacity:.7;    
+    background: rgba(0, 0, 0, .1);
 }

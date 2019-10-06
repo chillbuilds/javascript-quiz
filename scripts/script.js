@@ -1,33 +1,46 @@
-var startBtnEl = document.querySelector("#startBtn")
-var scoreBtnEl = document.querySelector("#scoreBtn")
 var questionNum = 0;
 var totalSeconds = 0;
 var secondsElapsed = 0;
-var questionsStr = JSON.stringify(questions);
+var currentAnswer = "";
+var userAnswer = "";
 $("#timeHolder").text("Timer: " + 0);
 
-    // var question_number = [];
-    // for(i = 0; i < question.length; i++){
-    //     question_number.push(questions[i].number);
-    // }
+function renderAnswers(){
+    for(i = 0; i < questions[questionNum].choices.length;i++){
+        var answerBtn = $("<button>");
+        answerBtn.addClass("answerBtns");
+        answerBtn.text(questions[questionNum].choices[i]);
+        $("#questionContainer").append(answerBtn);
+        
+    }
 
+}
+
+function setTime(){
+    var timerInterval = setInterval(function(){
+        totalSeconds--;
+        $("#timeHolder").text("Timer: " + totalSeconds);
+        console.log(totalSeconds)
+    }, 1000);
+}
 
 function quizStart(){
-    totalSeconds = questions.length * 15;     //arraylength * 5 seconds
-    $("#timeHolder").text("Timer: " + totalSeconds);
-    startBtn.innerHTML = ""; //placeholder
+    totalSeconds = questions.length * 15;
+    setTime();
     document.querySelector("#startBtn").id = 'questionContainer';
-    var newQuestion = questions[questionNum].title;
-    questionContainer.innerHTML = newQuestion;
-
-    // questionNum = questionNum + 1;
-    
+    nextQuestion();
+        
 }
 
 function nextQuestion(){
-    questionNum = questionNum + 1;
     var newQuestion = questions[questionNum].title;
-    questionContainer.innerHTML = newQuestion;
+    questionContainer.innerHTML = "<h1>" + newQuestion + "</h1>";
+    renderAnswers();
+    questionNum = questionNum + 1;
+}
+
+function answerCheck(){
+alert("dope");
 }
 
 function highscores(){
@@ -36,6 +49,8 @@ function highscores(){
 
 
 
-startBtnEl.addEventListener("click", quizStart)
+$("#startStyle").on("click", quizStart);
 
-scoreBtnEl.addEventListener("click", highscores)
+$("#scoreStyle").on("click", highscores);
+
+$(".answerBtns").on("click", highscores);

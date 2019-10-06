@@ -1,7 +1,7 @@
 var questions = [
     { number: "1",
       title: "Inside which HTML element do we put the JavaScript?",
-      choices: ["<javascript>", "<script>", "js"],
+      choices: ["<javascript>", "<script>", "<js>"],
       answer: "<script>"
     },
     { number: "2",
@@ -14,4 +14,9 @@ var questions = [
         choices: ["function = myFunction()", "function myFunction()", "function:myFunction()"],
         answer: "function myFunction()"
       },
+      {   number: "4",
+      title: "How hard is javascript?",
+      choices: ["function = myFunction()", "function myFunction()", "function:myFunction()"],
+      answer: "function myFunction()"
+    },
   ];
