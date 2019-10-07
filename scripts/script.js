@@ -1,3 +1,10 @@
+var x = localStorage.getItem('saves');
+x = JSON.parse(x);
+var scores = x;
+if(Array.isArray(scores)){console.log("");
+}else{
+    scores = [{name: "SPN", score: 5},]
+}
 var questionNum = 0;
 var questionsAnswered = 0;
 var totalSeconds = 0;
@@ -10,14 +17,8 @@ var playerObject = {};
 var scoresArray = [];
 var highScores = false;
 $("#timeHolder").text("Timer: " + 0);
-var scores = [
-  { name: "SPN", score: 0 },
-  { name: "WDW", score: 2 },
-  { name: "ASS", score: 1 }
-];
+scoreSort();
 
-scores.sort((a, b) => (a.score < b.score) ? 1 : -1);
-console.log(scores);
 
 function quizStart() {
   totalSeconds = questions.length * 15;
@@ -84,8 +85,27 @@ function highscores() {
   $("#quiz").attr("style", "display : none;");
   $("#quizEnd").attr("style", "display : none;");
   $("#startStyle").attr("style", "display : none;");
-  $(".scoreTable").attr("style", "display : contents;");
+  $("#scoreTable").attr("style", "display : contents;");
   $("#scoreTableHeader").text("Highscores");
+  $("#1st").text(scores[0].name + " - " +scores[0].score);
+  $("#2nd").text(scores[1].name + " - " +scores[1].score);
+  $("#3rd").text(scores[2].name + " - " +scores[2].score);
+  $("#4th").text(scores[3].name + " - " +scores[3].score);
+  $("#5th").text(scores[4].name + " - " +scores[4].score);
+  scoreSort();
+}
+
+function scoreSort(){
+
+    scores.sort((a, b) => (a.score < b.score) ? 1 : -1);
+    
+    if(scores.length > 5){
+        scores.pop();
+    }
+    localStorage.setItem('saves', JSON.stringify(scores));
+    var x = localStorage.getItem('saves');
+    x = JSON.parse(x);
+
 }
 
 $("#startBtnStyle").on("click", quizStart);
@@ -107,8 +127,11 @@ $(".choices").on("click", function() {
 
 $("#inputStyle").on("keyup", function(e) {
   if (e.keyCode === 13) {
-    var x = document.querySelector("#inputStyle").value;
+    var x = document.querySelector("#inputStyle").value.toUpperCase();
     var y = score;
+    var z = {name: x, score: y}
+    scores.push(z);
+    scoreSort();
     highscores();
   }
 });

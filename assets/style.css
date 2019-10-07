@@ -46,6 +46,22 @@ font-size: 24px;
 
 .scoreTable {
     background: #8a2525;
+    font-s
+    color: #8a2525;
+}
+
+#scoreTableHeader {
+    /* text-align: center; */
+    padding: 40px;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.scoreTable {
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 24px;
 }
 
 #inputStyle {
