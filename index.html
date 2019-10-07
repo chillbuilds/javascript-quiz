@@ -26,30 +26,44 @@
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-<div class="container">
-    <div class="row">
-        <div class="col-3" id="scoreBtn"><button id="scoreStyle">Highscores</button></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-3" id="scoreBtn">
+          <button id="scoreStyle">Highscores</button>
+        </div>
         <div class="col-6">
-            <div id="startStyle"><button>Start Quiz</button></div>
-            <div id="quiz" style="display : none;">
-                <div id="question"></div>
-                <div id="choices">
-                    <div id="choice1"></div>
-                    <div id="choice2"></div>
-                    <div id="choice3"></div>
-                </div>
-            
-            
-            
+          <div id="startStyle">
+            <button id="startBtnStyle">Start Quiz</button>
+          </div>
+          <div id="quiz" style="display : none;">
+            <div id="question"></div>
+            <div class="choices" id="a" name=""></div>
+            <div class="choices" id="b" name=""></div>
+            <div class="choices" id="c" name=""></div>
+          </div>
+          <div id="quizEnd" style="display : none;">
+            <div class="quizEnd" id="header"></div>
+            <div class="quizEnd" id="scoreText"></div>
+            <div class="quizEnd" id="score"></div>
+            <div class="quizEnd" id="initialsText"></div>
+            <div class="quizEnd" id="initialsInput">
+              <input maxlength="3" type="text" id="inputStyle" />
             </div>
+          </div>
+          <div class="scoreTable" style="display : none;">
+            <div class="scoreTable" id="scoreTableHeader"></div>
+            <div class="scoreTable" id="1st"></div>
+            <div class="scoreTable" id="2nd"></div>
+            <div class="scoreTable" id="3rd"></div>
+            <div class="scoreTable" id="4th"></div>
+          </div>
         </div>
         <div class="col-3" id="timeHolder"></div>
+      </div>
     </div>
-</div>
-
 
     <script src="scripts/questions.js"></script>
     <script src="scripts/script.js"></script>

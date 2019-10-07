@@ -2,13 +2,12 @@
   padding-top: 40px;
 }
 
-#startStyle {
-  background: #999999;
-  font-size: 26;
+#startBtnStyle {
+    background: #8a2525;
+    font-size: 24px;
   text-align: center;
   padding: 10px 20px;
   margin-top: 10px;
-  opacity: 0.8;
   border: none;
   border-radius: 4px;
   display: table;
@@ -20,6 +19,7 @@ h1 {
 }
 
 #scoreStyle {
+font-size: 24px;
   padding: 10px 20px;
   text-align: center;
   background: none;
@@ -28,33 +28,61 @@ h1 {
   margin: 0 auto;
 }
 
-#questionContainer {
-  background: #999999;
-  width: 100%;
-  padding: 20px;
-  /* transition: .5s; */
+#header {
+    background: #8a2525;
+    text-align: center;
+    padding: 20px;
+    font-size: 26px;
+    font-weight: bold;
 }
+
+.quizEnd {
+    background: #8a2525;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 22px;
+}
+
+.scoreTable {
+    background: #8a2525;
+}
+
+#inputStyle {
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-right: rgba(0, 0, 0, 0.1);
+    border-bottom: rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+input:focus {outline:0;}
+
+button:focus {outline:0;}
 
 #timeHolder {
   text-align: center;
+  font-size: 24px;
 }
 
-.answerBtns {
-  background: #999999;
-  font-size: 26px;
-  display: table;
-  margin: 0 auto;
-  width: 100%;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-left: none;
-  border-top: none;
+.choices {
+    text-align: center;
+    font-size: 22px;
+    padding: 10px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.03);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    border-right: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
 }
 
-button:hover {
-  outline: 0;
-  opacity: 0.7;
-  background: rgba(0, 0, 0, 0.1);
+#question {
+    background: #8a2525;
+    padding: 30px 5px;
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 40px;
 }
 
 #finalScore{
