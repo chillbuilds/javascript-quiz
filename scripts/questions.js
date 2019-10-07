@@ -30,10 +30,10 @@ var questions = [
     number: "4",
     title: "How hard is javascript?",
     choices: [
-      "function = myFunction()",
-      "function myFunction()",
-      "function:myFunction()"
+      "It's Pretty Easy",
+      "I Do This For Fun",
+      "Shoot Me"
     ],
-    answer: "function myFunction()"
+    answer: "Shoot Me"
   }
 ];

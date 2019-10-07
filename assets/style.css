@@ -46,13 +46,11 @@ font-size: 24px;
 
 .scoreTable {
     background: #8a2525;
-    font-s
-    color: #8a2525;
 }
 
 #scoreTableHeader {
     /* text-align: center; */
-    padding: 40px;
+    padding-top: 40px;
     font-weight: bold;
     font-size: 26px;
 }
@@ -76,6 +74,13 @@ font-size: 24px;
 input:focus {outline:0;}
 
 button:focus {outline:0;}
+
+#playAgainBtn {
+    padding: 20px;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
 
 #timeHolder {
   text-align: center;

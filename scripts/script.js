@@ -16,6 +16,7 @@ var userAnswer = "";
 var playerObject = {};
 var scoresArray = [];
 var highScores = false;
+var multiplier = 15;
 $("#timeHolder").text("Timer: " + 0);
 scoreSort();
 
@@ -58,7 +59,7 @@ function renderAnswers() {
 
 function answerCheck() {
   if (userAnswer == correctAnswer) {
-    score++;
+    score = score + 5 * multiplier;
   } else {
     totalSeconds = totalSeconds - 5;
   }
@@ -81,7 +82,6 @@ function quizEnd() {
 }
 
 function highscores() {
-  highscores = true;
   $("#quiz").attr("style", "display : none;");
   $("#quizEnd").attr("style", "display : none;");
   $("#startStyle").attr("style", "display : none;");
@@ -92,6 +92,7 @@ function highscores() {
   $("#3rd").text(scores[2].name + " - " +scores[2].score);
   $("#4th").text(scores[3].name + " - " +scores[3].score);
   $("#5th").text(scores[4].name + " - " +scores[4].score);
+  $("#playAgainBtn").text("Play Again");
   scoreSort();
 }
 
@@ -121,9 +122,21 @@ $(".choices").on("click", function() {
   x.attr("name", questions[questionNum - 1].choices[2]);
   userAnswer = $(this).attr("name");
   questionsAnswered = questionsAnswered + 1;
+  multiplier = 15;
   answerCheck();
   nextQuestion();
-});
+  });
+
+  $("#playAgainBtn").on("click", function (){
+      alert('')
+  })
+
+  setInterval(function(){
+    multiplier = multiplier - 1;
+    if(multiplier <= 0){
+        multiplier = 0;
+    }
+  }, 1000);
 
 $("#inputStyle").on("keyup", function(e) {
   if (e.keyCode === 13) {
